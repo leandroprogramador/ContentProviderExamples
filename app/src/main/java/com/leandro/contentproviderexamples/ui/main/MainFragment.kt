@@ -5,10 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.leandro.contentproviderexamples.R
 import com.leandro.contentproviderexamples.databinding.FragmentMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainFragment : Fragment() {
    lateinit var binding : FragmentMainBinding
 
@@ -27,6 +29,9 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.btnMyContacts.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_contactsFragment)
+        }
     }
 
 

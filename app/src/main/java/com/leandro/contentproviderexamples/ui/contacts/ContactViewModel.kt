@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.leandro.contentproviderexamples.data.repository.ContactRepository
 import com.leandro.contentproviderexamples.domain.model.Contact
+import com.leandro.contentproviderexamples.domain.model.ContactResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -14,8 +15,8 @@ import javax.inject.Inject
 @HiltViewModel
 class ContactViewModel @Inject constructor(private val contactRepository: ContactRepository) : ViewModel(){
 
-    private val _contacts = MutableLiveData<List<Contact>>()
-    val contacts : LiveData<List<Contact>> = _contacts
+    private val _contacts = MutableLiveData<ContactResult>()
+    val contacts : LiveData<ContactResult> = _contacts
 
     fun getContacts() {
         viewModelScope.launch(Dispatchers.IO) {

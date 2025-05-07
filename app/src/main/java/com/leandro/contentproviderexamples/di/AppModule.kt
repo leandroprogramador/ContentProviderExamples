@@ -8,6 +8,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -24,6 +25,6 @@ abstract class AppModule {
     companion object {
         @Provides
         @Singleton
-        fun provideContentResolver(context: Context) : ContentResolver = context.contentResolver
+        fun provideContentResolver(@ApplicationContext context: Context) : ContentResolver = context.contentResolver
     }
 }

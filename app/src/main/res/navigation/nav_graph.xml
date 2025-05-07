@@ -7,5 +7,13 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.leandro.contentproviderexamples.ui.main.MainFragment"
-        android:label="@string/menu" />
+        android:label="@string/menu" >
+        <action
+            android:id="@+id/action_mainFragment_to_contactsFragment"
+            app:destination="@id/contactsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactsFragment"
+        android:name="com.leandro.contentproviderexamples.ui.contacts.ContactsFragment"
+        android:label="ContactsFragment" />
 </navigation>
